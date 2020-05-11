@@ -1,0 +1,41 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/recommend/recommend",
+    "pages/search/search",
+    "pages/home/home"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#911",
+    "navigationBarTitleText": "Music",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "音乐馆",
+      "iconPath": "/dist/image/music-hall.png",
+      "selectedIconPath": "/dist/image/music-hall-active.png"
+    },{
+      "pagePath": "pages/recommend/recommend",
+      "text": "推荐",
+      "iconPath": "/dist/image/Recommend.png",
+      "selectedIconPath": "/dist/image/Recommend-active.png"
+    },{
+      "pagePath": "pages/search/search",
+      "text": "搜索",
+      "iconPath": "/dist/image/动态.png",
+      "selectedIconPath": "/dist/image/动态-active.png"
+    },{
+      "pagePath": "pages/home/home",
+      "text": "我的",
+      "iconPath": "/dist/image/我的.png",
+      "selectedIconPath": "/dist/image/我的-active.png"
+    }
+  ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

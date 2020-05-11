@@ -1,0 +1,3 @@
+<view>
+  <input class="weui-input" placeholder="请输入作者和歌名"/>
+</view>
