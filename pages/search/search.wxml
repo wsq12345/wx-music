@@ -1,3 +1,33 @@
-<view>
-  <input class="weui-input" placeholder="请输入作者和歌名"/>
+<view class="weui-search-bar">
+   <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" placeholder="搜索歌曲、歌手、专辑" value="{{value}}" bindinput='SearchInput' bindconfirm="SearchConfirm" />
+      <view class="results" wx:if="{{!hotShow}}">
+        <view wx:for="{{results}}" wx:for-item="item" wx:key="index" class="result" bind:tap="linkTo" data-id="{{item}}">
+          <text class="">
+             {{item.name}}
+          </text>
+          <view wx:for="{{item.artists}}" wx:for-item="item" wx:key="index" class="clearfix">
+            <text class="artists">
+              {{item.name+'/'}}
+            </text>
+          </view>
+          <view>
+            <text>
+              {{item.album.name}}
+            </text>
+          </view>
+        </view>
+      </view>
+      <view class="hot" wx:if="{{hotShow}}">
+        <text>
+          热搜
+        </text>
+        <text wx:for="{{hots}}" wx:for-item="item" wx:key="index" class="hotSearch" bind:tap="searchHot" data-id="{{item}}">
+          {{item.first}}
+        </text>
+      </view>
+    </view>
+  </view>
 </view>

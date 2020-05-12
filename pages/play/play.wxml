@@ -1,0 +1,4 @@
+<view>
+    <image class="" src="{{picUrl}}" lazy-load="true"/>
+    <audio src="{{songUrl}}" controls="{{true}}"  poster="{{picUrl}}" name="{{songName}}" author="{{author}}"/>
+</view>

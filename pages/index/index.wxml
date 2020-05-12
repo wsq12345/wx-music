@@ -1,4 +1,25 @@
 <!--index.wxml-->
+<wxs module="filter" src="../../utils/getCount.wxs"></wxs>
 <view>
-
+    <swiper indicator-dots="{{indicatordots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{banner}}" wx:key="index" wx:for-item="item">
+            <swiper-item>
+                <image src="{{item.imageUrl}}" alt="" class="banner"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view>
+        <text>
+            推荐歌单
+        </text>
+    </view>
+    <scroll-view>
+        <view wx:for="{{personalized}}" wx:for-item="item" wx:key="index" class="main">
+            <image src="{{item.picUrl}}" alt="" class="pic" lazy-load="{{true}}"/>
+            <view class="playCount"><icon class="iconfont icon-erji"></icon>{{filter.getCount(item.playCount)}}</view>
+            <text class="content">
+                {{item.name}}
+            </text>
+        </view>
+    </scroll-view>
 </view>
