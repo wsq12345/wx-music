@@ -1,5 +1,5 @@
 let app =  getApp();
-var host = "http://localhost:3000";
+var host = "http://10.0.0.13:3000";
 
 export function getData(url,data,method,doSuccess){
     wx.request({

@@ -2,11 +2,13 @@
 var api = require("../../utils/api")
 Page({
     data: {
+        isplay: 'false',
         id: '',
         picUrl: '',
         songUrl: '',
         songName: '',
-        author: ''
+        author: '',
+        style: 'icon-zanting'
     },
     //options(Object)
     
@@ -18,6 +20,15 @@ Page({
         api.getData('/song/detail',{ids:options.id},"GET",this.picUrlSu);
         api.getData('/song/url',{id:options.id},"GET",this.songUrlSu);
     },
+    onReady: function (e) {
+        // 使用 wx.createAudioContext 获取 audio 上下文 context
+        this.audioCtx = wx.createAudioContext('myaudio');
+        wx.createAudioContext('myaudio').play();
+        this.setData({
+            isplay:true,
+            style:'icon-bofang'
+        })
+      },
     picUrlSu(data){
         var that=this;
         that.setData({
@@ -30,5 +41,21 @@ Page({
         that.setData({
             songUrl:data.data.data[0].url,
         })
+    },
+    play(){
+        var that=this;
+        if(this.data.isplay==true){
+            that.audioCtx.pause();
+            that.setData({
+                isplay:false,
+                style:'icon-zanting'
+            })
+        }else{
+            that.audioCtx.play();
+            that.setData({
+                isplay:true,
+                style:'icon-bofang'
+            })
+        }  
     }
 });

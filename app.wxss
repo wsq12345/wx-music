@@ -25,3 +25,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .icon-erji:before{content: '\e655';}
+.icon-shangyishou:before{content: '\e603';}
+.icon-bofang:before{content: '\e61a';}
+.icon-zanting:before{content: '\e619';}
+.icon-xiayishou:before{content: '\e602';}
+.icon-bofangliebiao:before{content: '\e634';}

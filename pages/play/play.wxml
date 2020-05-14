@@ -1,4 +1,10 @@
 <view>
     <image class="" src="{{picUrl}}" lazy-load="true"/>
-    <audio src="{{songUrl}}" controls="{{true}}"  poster="{{picUrl}}" name="{{songName}}" author="{{author}}"/>
+    <audio src="{{songUrl}}" id="myaudio" controls="{{true}}"  poster="{{picUrl}}" name="{{songName}}" author="{{author}}"/>
+    <view class="control">
+        <icon class="iconfont icon-shangyishou"></icon>
+        <icon class="iconfont {{style}}" bind:tap="play"></icon>
+        <icon class="iconfont icon-xiayishou"></icon>
+        <icon class="iconfont icon-bofangliebiao"></icon> 
+    </view>  
 </view>
