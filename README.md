@@ -1,1 +1,1 @@
-<div align="center">微信小程序云音乐</div>
+<div align="center">云音乐微信小程序版</div>
